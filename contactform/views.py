@@ -12,7 +12,7 @@ def create(request):
 
     if message.is_valid():
         message.save()
-        return redirect('/contact/?create=ok')
+        return redirect('/?message=success')
     else:
         return render(request,
                       'contactform/index.html',

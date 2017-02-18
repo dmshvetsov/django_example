@@ -120,6 +120,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 try:
-    from dev_settings import *
+    from .dev_settings import *
 except ImportError:
     pass

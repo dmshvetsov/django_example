@@ -1,7 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'contactform/kube.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'contactform/style.css' %}" />
-  {% if request.GET.create == 'ok' %}
+  {% if request.GET.message == 'success' %}
     <div class="message focus text-center" data-component="message">
       Thanks for contactimg me. I will respond you as soon as posible.
       <span class="close small"></span>
