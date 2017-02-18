@@ -1,0 +1,49 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'contactform/kube.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'contactform/style.css' %}" />
+  {% if request.GET.create == 'ok' %}
+    <div class="message focus text-center" data-component="message">
+      Thanks for contactimg me. I will respond you as soon as posible.
+      <span class="close small"></span>
+    </div>
+  {% endif %}
+
+<div class="content">
+  <h1 class="title">Django example application</h1>
+
+  <div class="row">
+    <div class="col col-4">
+      <img src="{% static 'contactform/django-python.png' %}" alt="django and python" />
+    </div>
+    <div class="col col-8 d-lead-text">
+      <p class="large">This is example application build with Django web framework and Python programming language.</p>
+      <p class="large">You can check source code of the application <a href="https://github.com/shvetsovdm/django_example">here</a>.</p>
+    </div>
+  </div>
+
+  <div class="row d-call-to-action">
+    <div class="col col-12">
+      <p class="large">If you are looking for a web developer or web development consulting send me a message with form bellow.</p>
+    </div>
+  </div>
+
+  <form action="{% url 'contactform:messages' %}" method="post" class="form">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Contact me</legend>
+
+      {{ message_form.as_p }}
+
+      <figure class="form-item">
+        <button type="submit">Send message</button>
+      </figure>
+    </fieldset>
+  </form>
+
+  <footer>
+    Developed by <a href="https://shvetsovdm.github.com">shvetsovdm</a>.
+  </footer>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'contactform/kube.min.js' %}"></script>
