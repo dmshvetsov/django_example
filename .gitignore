@@ -1,6 +1,10 @@
 .DS_Store
-venv/*
+venv
 *.sqlite3
+
+*.pyc
+staticfiles
+.env
 
 *.egg-info
 *.pot
